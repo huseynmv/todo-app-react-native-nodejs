@@ -1,7 +1,9 @@
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 const RegisterScreen = ({navigation}) => {
+  const [mail, setmail] = useState('');
+
   const ConfirmScreen = () => {
     navigation.navigate('ConfirmCode');
   };
@@ -12,8 +14,9 @@ const RegisterScreen = ({navigation}) => {
 
       <TextInput
         style={styles.input}
-        // onChangeText={onChangeText}
-        // value={text}
+        onChangeText={setmail}
+        value={mail}
+        placeholder="Enter your email address..."
       />
       <Button title="Register" onPress={() => ConfirmScreen()}></Button>
     </View>

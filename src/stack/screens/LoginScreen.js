@@ -1,13 +1,16 @@
 import {Button, StyleSheet, Text, View, TextInput} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 const LoginScreen = ({navigation}) => {
+  const [mail, setmail] = useState('');
+
   return (
     <View>
       <TextInput
         style={styles.input}
-        // onChangeText={onChangeText}
-        // value={text}
+        onChangeText={setmail}
+        value={mail}
+        placeholder="Enter your email address..."
       />
       <Button
         title="Login"
